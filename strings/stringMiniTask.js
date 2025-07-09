@@ -83,4 +83,34 @@ const removeAdjacent = (str) => {
     return stack.join('');
 }
 
-console.log(removeAdjacent("abbaca"))
+// console.log(removeAdjacent("abbaca"))
+
+const isPalindrome = (str,left,right) => {
+
+    while(left<right){
+        if(str[left] != str[right]) return false;
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+
+const nearPalindrome = (str) => {
+    let left = 0;
+    let right = str.length-1;
+
+    while(left < right){
+        if(str[left] != str[right]){
+          return isPalindrome(str,left+1,right) || isPalindrome(str,left,right-1)
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+
+console.log(nearPalindrome("abca"));  // ✅ true — remove 'b'
+console.log(nearPalindrome("abc"));   // ❌ false — needs 2 deletions
+console.log(nearPalindrome("racecar")); // ✅ true — already palindrome
