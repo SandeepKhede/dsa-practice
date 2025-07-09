@@ -63,4 +63,24 @@ const isoMorphic = (str1, str2) => {
 }
 
 
-console.log(isoMorphic('badc','baba'));
+// console.log(isoMorphic('badc','baba'));
+
+
+// 🔸 4. Remove All Adjacent Duplicates in a String
+// Input: "abbaca"
+// Output: "ca"
+
+
+const removeAdjacent = (str) => {
+    const stack = [];
+
+    for(let char of str){
+        if(stack.includes(char)){
+            stack.pop();
+        }
+        else stack.push(char)
+    }
+    return stack.join('');
+}
+
+console.log(removeAdjacent("abbaca"))
