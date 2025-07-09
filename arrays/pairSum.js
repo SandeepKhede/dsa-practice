@@ -9,7 +9,7 @@ const pairSum = (arr,n) => {
         const sum = arr[right] + arr[left];
         if(sum === target) return true;
         else if (sum < target) left ++;
-        right --;
+        else right --;
     }
     return false
 }
