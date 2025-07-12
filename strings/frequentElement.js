@@ -22,4 +22,23 @@ const frequentElement = (arr,k) => {
 }
 
 
-console.log(frequentElement(arr,k))
+// console.log(frequentElement(arr,k));
+
+
+const freqElem = (arr) => {
+    const freqMap = new Map();
+    for(let item of arr){
+        if(freqMap.has(item)){
+
+            freqMap.set(item,freqMap.get(item)+1)
+        }
+        else{
+            freqMap.set(item,1)
+        }
+        }
+
+        return freqMap;
+
+}
+
+console.log(freqElem(arr))
