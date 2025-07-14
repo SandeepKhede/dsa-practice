@@ -111,6 +111,19 @@ const nearPalindrome = (str) => {
     return true;
 }
 
-console.log(nearPalindrome("abca"));  // ✅ true — remove 'b'
-console.log(nearPalindrome("abc"));   // ❌ false — needs 2 deletions
-console.log(nearPalindrome("racecar")); // ✅ true — already palindrome
+// console.log(nearPalindrome("abca"));
+// console.log(nearPalindrome("abc"));
+// console.log(nearPalindrome("racecar"));
+
+
+const freqMap = (arr) => {
+    const map = new Map();
+
+    for (let num of arr){
+        map.set(num, (map.get(num) || 0) + 1)
+    }
+
+    return map;
+}
+
+console.log(freqMap([1, 2, 2, 3, 3, 3]))
